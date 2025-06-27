@@ -1,5 +1,5 @@
 import { Grid, Box } from '@mui/material';
-import { ComboBoxAutocomplete } from '../../components/forms/AutoComplete/ComboBoxAutocomplete';
+// import { ComboBoxAutocomplete } from '../../components/forms/AutoComplete/ComboBoxAutocomplete';
 import { MultipleValuesAutocomplete } from '../../components/forms/AutoComplete/MultipleValuesAutocomplete';
 import { CheckboxesAutocomplete } from '../../components/forms/AutoComplete/CheckboxesAutocomplete';
 import { SizesAutocomplete } from '../../components/forms/AutoComplete/SizesAutocomplete';
@@ -18,7 +18,7 @@ const ExAutoComplete = () => {
             alignItems: 'stretch',
           }}
         >
-          <ComboBoxAutocomplete />
+          {/* <ComboBoxAutocomplete /> */}
         </Grid>
 
         {/* ------------------------- row 5 ------------------------- */}

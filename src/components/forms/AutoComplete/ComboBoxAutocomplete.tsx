@@ -1,22 +1,22 @@
 import { TextField } from "@mui/material";
 
-import Autocomplete from '@mui/material/Autocomplete';
+// import Autocomplete from '@mui/material/Autocomplete';
 
-import BaseCard from "../../BaseCard/BaseCard";
+// import BaseCard from "../../BaseCard/BaseCard";
 
-const ComboBoxAutocomplete = () => {
-  return (
-    <BaseCard title="Combo box">
-      <Autocomplete
-        disablePortal
-        id="combo-box-demo"
-        options={top100Films}
-        fullWidth
-        renderInput={(params) => <TextField {...params} label="Combo Box" />}
-      />
-    </BaseCard>
-  );
-};
+// const ComboBoxAutocomplete = () => {
+//   return (
+//     <BaseCard title="Combo box">
+//       <Autocomplete
+//         disablePortal
+//         id="combo-box-demo"
+//         options={top100Films}
+//         fullWidth
+//         renderInput={(params) => <TextField {...params} label="Combo Box" />}
+//       />
+//     </BaseCard>
+//   );
+// };
 
 // Top 100 films as rated by IMDb users. http://www.imdb.com/chart/top
 const top100Films = [
@@ -147,4 +147,4 @@ const top100Films = [
   { label: "Monty Python and the Holy Grail", year: 1975 },
 ];
 
-export { ComboBoxAutocomplete };
+// export { ComboBoxAutocomplete };
