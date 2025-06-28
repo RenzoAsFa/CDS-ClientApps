@@ -9,7 +9,7 @@ import { useState, useEffect } from 'react';
 
 
 type Vendedor = {
-  idVendedor: number | string;
+  idVendedor?: number | string;
   numDocVendedor: string;
   nombreVendedor: string;
   Estado?: boolean | number;
@@ -59,12 +59,12 @@ const peticionGet=async()=>{
     })
 };
 
-/*const peticionPost = async () => {
+const peticionPost = async () => {
   delete gestorSeleccion.idVendedor; // Asegurarse de que no se envíe el ID_Vendedor al crear un nuevo registro
   //gestorSeleccion.numDocVendedor = String(gestorSeleccion.numDocVendedor); // Asegurarse de que sea un número
   await axios.post(baseUrl, gestorSeleccion)
     .then(response => {
-      setData(data.concat(response.data)); // Agregar el nuevo registro a la lista
+      setData(data.concat(response.data as Vendedor)); // Agregar el nuevo registro a la lista
       abrirCerrarModalInsertar(); // Cerrar el modal después de insertar
     }).catch(error => {
       console.error("Error al insertar el registro:", error);
@@ -72,10 +72,10 @@ const peticionGet=async()=>{
 };
 
 const peticionPut = async () => {
-  gestorSeleccion.idVendedor = parseInt(gestorSeleccion.idVendedor); // Asegurarse de que sea un númer
+  gestorSeleccion.idVendedor = gestorSeleccion.idVendedor !== undefined ? parseInt(String(gestorSeleccion.idVendedor)) : undefined; // Asegurarse de que sea un número
   await axios.put(baseUrl+"/"+gestorSeleccion.idVendedor, gestorSeleccion)
   .then(response => {
-    var respuesta = response.data;
+    var respuesta = response.data as Vendedor;
     var dataAuxiliar = data;
     dataAuxiliar.map(vendedor => {
       if(vendedor.idVendedor === gestorSeleccion.idVendedor){
@@ -87,7 +87,7 @@ const peticionPut = async () => {
   }).catch(error => {
     console.error("Error al editar el registro:", error);
   })
-}*/
+}
 
 /*interface SeleccionarGestorProps {
   vendedor: Vendedor;
@@ -156,7 +156,7 @@ const seleccionarGestor = (vendedor: Vendedor, caso: string): void => {
           </div>
         </ModalBody>
         <ModalFooter>
-          {/* <button className="btn btn-primary" onClick={()=>peticionPost()}>Insertar</button> */}
+          <button className="btn btn-primary" onClick={()=>peticionPost()}>Insertar</button>
           <button className="btn btn-danger" onClick={()=>abrirCerrarModalInsertar()}>Cancelar</button>
         </ModalFooter>
       </Modal>
@@ -181,7 +181,7 @@ const seleccionarGestor = (vendedor: Vendedor, caso: string): void => {
             </div>
           </ModalBody>
           <ModalFooter>
-            {/* <button className='btn btn-primary' onClick={()=>peticionPut()}>Editar</button>{" "} */}
+            <button className='btn btn-primary' onClick={()=>peticionPut()}>Editar</button>{" "}
             <button className='btn btn-danger' onClick={()=>abrirCerrarModalEditar()}>Cancelar</button>
           </ModalFooter>
       </Modal>
