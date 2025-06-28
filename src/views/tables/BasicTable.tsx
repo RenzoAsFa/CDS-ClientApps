@@ -121,7 +121,7 @@ const seleccionarGestor = (vendedor: Vendedor, caso: string): void => {
           </tr>
         </thead>
         <tbody>
-          {data.map(vendedor=>(
+          {Array.isArray(data) && data.map(vendedor => (
             <tr key={vendedor?.idVendedor ?? `${vendedor.numDocVendedor}-${Math.random()}`}>
              <td>{vendedor.idVendedor}</td>
              <td>{vendedor.numDocVendedor}</td>
