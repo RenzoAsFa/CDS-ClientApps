@@ -4,7 +4,7 @@ import 'src/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import axios from 'axios';
-import { Modal, ModalBody, ModalFooter, ModalHeader, Table } from 'reactstrap';
+import { Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
 import { useState, useEffect } from 'react';
 
 
@@ -87,10 +87,10 @@ const peticionPut = async () => {
   })
 }*/
 
-interface SeleccionarGestorProps {
+/*interface SeleccionarGestorProps {
   vendedor: Vendedor;
   caso: string;
-}
+}*/
 
 const seleccionarGestor = (vendedor: Vendedor, caso: string): void => {
   setGestorSeleccion(vendedor);
