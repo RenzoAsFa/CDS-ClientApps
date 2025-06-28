@@ -52,6 +52,7 @@ const abrirCerrarModalEditar = () => {
 const peticionGet=async()=>{
   await axios.get(baseUrl)
     .then(response => {
+      console.log("Datos obtenidos:", response.data);
       setData(response.data as Vendedor[]); // Asignar los datos obtenidos a la variable de estado
     }).catch(error => {
       console.error("Error al obtener los datos:", error);
