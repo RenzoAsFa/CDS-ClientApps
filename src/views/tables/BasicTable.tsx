@@ -17,10 +17,10 @@ type Vendedor = {
 
 function App() {
 
-/*const baseUrl = "https://7e00-190-107-182-178.ngrok-free.app/Vendedor"; /*COLOCAR API*/
 /*const baseUrl = "http://5963-190-107-182-178.ngrok-free.app/Vendedor";*/ /* API VIERNES */
-const baseUrl = "https://b38b-38-25-17-121.ngrok-free.app/Vendedor"; /* API SÁBADO */
-//const baseUrl = "https://localhost:7002/Vendedor";
+// const baseUrl = "https://b38b-38-25-17-121.ngrok-free.app/Vendedor"; /* API SÁBADO */
+// const baseUrl = "https://localhost:7002/Vendedor"; // funciona en local
+const baseUrl = "https://72b0-38-25-17-121.ngrok-free.app/Vendedor";
 const [data, setData] = useState<Vendedor[]>([]);
 const [modalInsertar, setModalInsertar] = useState(false);
 const [modalEditar, setModalEditar] = useState(false); 
